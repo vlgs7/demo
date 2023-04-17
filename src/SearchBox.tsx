@@ -58,30 +58,6 @@ const SearchBox: React.FC = () => {
               onChange={(e) => handleInputChange(e.target.value)}
               placeholder="Search..."
             />
-
-            {suggestions.length > 0 && (
-              <div
-                className={clsx(
-                  "absolute z-10 w-4/5  bg-white border  rounded mt-[14px] clear-both left-[192px]",
-                  suggestions.length > 0 &&
-                    `border-x-blue-500 border-b-blue-600`
-                )}
-              >
-                <div className="">
-                  {suggestions.map((item) => (
-                    <div
-                      key={item.value}
-                      className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => {
-                        setInputValue(item.label);
-                      }}
-                    >
-                      {item.label}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
 
@@ -98,6 +74,28 @@ const SearchBox: React.FC = () => {
           百度一下
         </button>
       </div>
+      {suggestions.length > 0 && (
+        <div
+          className={clsx(
+            "w-4/5  bg-white border -mt-4",
+            suggestions.length > 0 && `border-x-blue-500 border-b-blue-600`
+          )}
+        >
+          <div className="">
+            {suggestions.map((item) => (
+              <div
+                key={item.value}
+                className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+                onClick={() => {
+                  setInputValue(item.label);
+                }}
+              >
+                {item.label}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
