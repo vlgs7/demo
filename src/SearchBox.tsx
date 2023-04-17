@@ -45,7 +45,7 @@ const SearchBox: React.FC = () => {
       <img src="/Baidu.svg" alt="Baidu_Logo" className="mt-64" />
       <div
         className={clsx(
-          `mt-6 flex items-center  mx-auto mb-4 border rounded w-4/5 lg:max-w-2xl hover:shadow-md border-blue-600 gap-4`,
+          `mt-6 flex items-center  mx-auto mb-4 border rounded w-4/5  hover:shadow-md border-blue-600 gap-4`,
           suggestions.length > 0 && "border-b-white"
         )}
       >
@@ -62,7 +62,7 @@ const SearchBox: React.FC = () => {
             {suggestions.length > 0 && (
               <div
                 className={clsx(
-                  "absolute z-10 w-4/5 bg-white border  rounded mt-[14px] clear-both left-[80px]",
+                  "absolute z-10 w-4/5  bg-white border  rounded mt-[14px] clear-both left-[192px]",
                   suggestions.length > 0 &&
                     `border-x-blue-500 border-b-blue-600`
                 )}
